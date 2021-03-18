@@ -8,7 +8,12 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+import static helpers.DriverHelper.getConsoleLogs;
 import static io.qameta.allure.Allure.step;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.not;
 
 public class HomePageTests extends TestBase {
 
@@ -55,5 +60,18 @@ public class HomePageTests extends TestBase {
                 $(byText("FAQ")).should(exist);
                 $(byText("FAQ")).shouldHave(href("/en/support/faq"));
         });
+    }
+
+    @Test
+    @DisplayName("Console log should not have any errors")
+    void consoleLogShouldNotHaveErrors() {
+        step("Open the main page", () ->
+                open("https://www.binance.com/"));
+
+        step("Get logs", () -> {
+                String consoleLogs = getConsoleLogs();
+                assertThat(consoleLogs, not(containsString("SEVERE")));
+        });
+
     }
 }
