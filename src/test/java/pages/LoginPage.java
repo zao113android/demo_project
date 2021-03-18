@@ -1,6 +1,7 @@
 package pages;
 
 import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -25,13 +26,11 @@ public class LoginPage {
     public void setEmailData(String email) {
         $(byName("email")).click();
         $(byName("email")).val(email);
-        $(byName("email")).click();
     }
 
     public void setPhoneData(String phone) {
         $(byName("mobile")).click();
         $(byName("mobile")).val(phone);
-        $(byName("mobile")).click();
     }
 
     public void setPassword(String password) {

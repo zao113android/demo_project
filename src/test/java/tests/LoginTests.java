@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import pages.Basic;
 import pages.LoginPage;
 
+import static com.codeborne.selenide.Selenide.*;
+
 public class LoginTests extends TestBase {
 
     LoginPage loginPage = new LoginPage();
@@ -18,7 +20,9 @@ public class LoginTests extends TestBase {
         page.openUrl();
         loginPage.openRegistration();
         loginPage.setEmailData(ConfigHelper.getEmail());
+        sleep(2000);
         loginPage.setPassword(ConfigHelper.getPassword());
+        sleep(2000);
         loginPage.submitRegistration();
         loginPage.checkCorrectResult("Security Verification");
     }
@@ -30,6 +34,7 @@ public class LoginTests extends TestBase {
         page.openUrl();
         loginPage.openLogin();
         loginPage.setEmailData(ConfigHelper.getEmail());
+        sleep(2000);
         loginPage.submitLogin();
         loginPage.checkCorrectResult("Please enter your password");
     }
@@ -42,7 +47,9 @@ public class LoginTests extends TestBase {
         loginPage.openRegistration();
         loginPage.openMobileTab();
         loginPage.setPhoneData(ConfigHelper.getPhone());
+        sleep(2000);
         loginPage.setPassword(ConfigHelper.getPassword());
+        sleep(2000);
         loginPage.submitRegistration();
         loginPage.checkCorrectResult("Security Verification");
     }
