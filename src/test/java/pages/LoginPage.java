@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class LoginPage {
 
@@ -26,11 +27,13 @@ public class LoginPage {
     public void setEmailData(String email) {
         $(byName("email")).click();
         $(byName("email")).val(email);
+        sleep(2000);
     }
 
     public void setPhoneData(String phone) {
         $(byName("mobile")).click();
         $(byName("mobile")).val(phone);
+        sleep(2000);
     }
 
     public void setPassword(String password) {

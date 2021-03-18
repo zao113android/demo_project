@@ -22,7 +22,6 @@ public class LoginTests extends TestBase {
         loginPage.setEmailData(ConfigHelper.getEmail());
         sleep(2000);
         loginPage.setPassword(ConfigHelper.getPassword());
-        sleep(2000);
         loginPage.submitRegistration();
         loginPage.checkCorrectResult("Security Verification");
     }
@@ -49,7 +48,6 @@ public class LoginTests extends TestBase {
         loginPage.setPhoneData(ConfigHelper.getPhone());
         sleep(2000);
         loginPage.setPassword(ConfigHelper.getPassword());
-        sleep(2000);
         loginPage.submitRegistration();
         loginPage.checkCorrectResult("Security Verification");
     }
