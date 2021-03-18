@@ -33,12 +33,12 @@ public class LoginPage {
     public void setPhoneData(String phone) {
         $(byName("mobile")).click();
         $(byName("mobile")).val(phone);
-        sleep(2000);
     }
 
     public void setPassword(String password) {
         $(byName("password")).click();
         $(byName("password")).setValue(password);
+        sleep(2000);
     }
 
     public void submitRegistration() {
