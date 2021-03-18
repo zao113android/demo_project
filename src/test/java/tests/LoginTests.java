@@ -18,10 +18,13 @@ public class LoginTests extends TestBase {
     void registrationViaEmailTest() {
 
         page.openUrl();
+        sleep(2000);
         loginPage.openRegistration();
+        sleep(2000);
         loginPage.setEmailData(ConfigHelper.getEmail());
         sleep(2000);
         loginPage.setPassword(ConfigHelper.getPassword());
+        sleep(2000);
         loginPage.submitRegistration();
         loginPage.checkCorrectResult("Security Verification");
     }
@@ -44,10 +47,13 @@ public class LoginTests extends TestBase {
 
         page.openUrl();
         loginPage.openRegistration();
+        sleep(2000);
         loginPage.openMobileTab();
+        sleep(2000);
         loginPage.setPhoneData(ConfigHelper.getPhone());
         sleep(2000);
         loginPage.setPassword(ConfigHelper.getPassword());
+        sleep(2000);
         loginPage.submitRegistration();
         loginPage.checkCorrectResult("Security Verification");
     }
