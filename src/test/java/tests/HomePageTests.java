@@ -42,13 +42,18 @@ public class HomePageTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Page Exchange is opened from menu")
+    @DisplayName("FAQ is opened from menu")
     void correctCurrencyPageIsOpenedTest() {
 
-        open("https://www.binance.com/");
+        step("Open the main page", () ->
+                open("https://www.binance.com/"));
 
-        $(byText("24 / 7 Support")).parent().click();
-        $(byText("FAQ")).should(exist);
-        $(byText("FAQ")).shouldHave(href("/en/support/faq"));
+        step("Find and click on support block", () ->
+                $(byText("24 / 7 Support")).parent().click());
+
+        step("Check result", () -> {
+                $(byText("FAQ")).should(exist);
+                $(byText("FAQ")).shouldHave(href("/en/support/faq"));
+        });
     }
 }
