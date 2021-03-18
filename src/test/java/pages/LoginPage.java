@@ -18,32 +18,39 @@ public class LoginPage {
     }
 
     public void openMobileTab() {
+
         $("#tab-mobile").click();
     }
 
     public void setEmailData(String email) {
         $(byName("email")).click();
-        $(byName("email")).setValue(email);
+        $(byName("email")).val(email);
+        $(byName("email")).click();
     }
 
     public void setPhoneData(String phone) {
         $(byName("mobile")).click();
-        $(byName("mobile")).setValue(phone);
+        $(byName("mobile")).val(phone);
+        $(byName("mobile")).click();
     }
 
     public void setPassword(String password) {
+        $(byName("password")).click();
         $(byName("password")).setValue(password);
     }
 
     public void submitRegistration() {
+
         $("#click-registration-submit").click();
     }
 
     public void submitLogin() {
+
         $("#click_login_submit").click();
     }
 
     public void checkCorrectResult(String resultText) {
+
         $(byText(resultText)).should(exist);
     }
 

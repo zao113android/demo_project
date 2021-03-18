@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.href;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -43,17 +42,13 @@ public class HomePageTests extends TestBase {
     }
 
     @Test
-    @Disabled
-    @DisplayName("Home page should have the link to Google Play")
-    void androidAppHomePage() {
+    @DisplayName("Page Exchange is opened from menu")
+    void correctCurrencyPageIsOpenedTest() {
 
-        step("Open the main page", () ->
-                open("https://www.binance.com/"));
+        open("https://www.binance.com/");
 
-        $(byText("Trade. Anywhere.")).scrollTo();
-
-        $$("div").find((text("Mobile")))
-                .$("a")
-                .shouldHave(href("https://play.google.com/store/apps/details?id=com.binance.dev"));
+        $(byText("24 / 7 Support")).parent().click();
+        $(byText("FAQ")).should(exist);
+        $(byText("FAQ")).shouldHave(href("/en/support/faq"));
     }
 }

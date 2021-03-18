@@ -42,7 +42,7 @@ public class LoginTests extends TestBase {
         loginPage.openRegistration();
         loginPage.openMobileTab();
         loginPage.setPhoneData(ConfigHelper.getPhone());
-        loginPage.setPassword(ConfigHelper.getPhone());
+        loginPage.setPassword(ConfigHelper.getPassword());
         loginPage.submitRegistration();
         loginPage.checkCorrectResult("Security Verification");
     }
