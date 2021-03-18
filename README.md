@@ -13,12 +13,17 @@ Build tests in Selenide:
 ## Screenshots:
 
 ### Jenkins
+![Jenkins](src/test/resources/img/jenkins.png)
 
 ### Allure
+![Allure](src/test/resources/img/allure_results.png)
+![Allure](src/test/resources/img/allure_test.png)
 
 ### Telegram
+![Telegram](src/test/resources/img/telegram.png)
 
 ### Video with test
+![Video](src/test/resources/video/test.gif)
 
 ## Technology Stack 
 
