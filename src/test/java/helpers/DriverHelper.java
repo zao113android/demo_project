@@ -34,5 +34,4 @@ public class DriverHelper {
     public static String getConsoleLogs() {
         return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
     }
-
 }

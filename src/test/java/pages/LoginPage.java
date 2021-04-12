@@ -1,7 +1,6 @@
 package pages;
 
 import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -20,7 +19,6 @@ public class LoginPage {
     }
 
     public void openMobileTab() {
-
         $("#tab-mobile").click();
     }
 
@@ -38,22 +36,17 @@ public class LoginPage {
     public void setPassword(String password) {
         $(byName("password")).click();
         $(byName("password")).setValue(password);
-        sleep(2000);
     }
 
     public void submitRegistration() {
-
         $("#click-registration-submit").click();
     }
 
     public void submitLogin() {
-
         $("#click_login_submit").click();
     }
 
     public void checkCorrectResult(String resultText) {
-
         $(byText(resultText)).should(exist);
     }
-
 }

@@ -1,6 +1,5 @@
 package tests;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +19,6 @@ public class HomePageTests extends TestBase {
     @Test
     @DisplayName("Page should have title")
     void titleHomePageTest() {
-
         step("Open the main page", () ->
                 open("https://www.binance.com/"));
 
@@ -31,7 +29,6 @@ public class HomePageTests extends TestBase {
     @Test
     @DisplayName("User can change the language")
     void languageHomePage() {
-
         step("Open the main page", () ->
                 open("https://www.binance.com/"));
 
@@ -49,7 +46,6 @@ public class HomePageTests extends TestBase {
     @Test
     @DisplayName("FAQ is opened from menu")
     void correctCurrencyPageIsOpenedTest() {
-
         step("Open the main page", () ->
                 open("https://www.binance.com/"));
 

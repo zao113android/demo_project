@@ -2,7 +2,7 @@ package pages;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class Basic {
+public class BasicPage {
 
     public void openUrl() {
         open("https://www.binance.com/");
